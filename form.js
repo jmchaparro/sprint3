@@ -12,7 +12,7 @@ const checkNombre = () => {
     console.log("Nombre correcto!");
     return true;
   }
-}
+};
 
 const checkApellido = () => {
   let validaApellido = document.getElementById("apellido");
@@ -27,7 +27,7 @@ const checkApellido = () => {
     console.log("Apellido correcto!");
     return true;
   }
-}
+};
 
 const checkTelefono = () => {
   let telefono = document.getElementById("telefono").value;
@@ -43,7 +43,7 @@ const checkTelefono = () => {
     );
     return false;
   }
-}
+};
 
 const checkCorreo = () => {
   let email = document.getElementById("correo").value;
@@ -62,7 +62,7 @@ const checkCorreo = () => {
     console.log("Correo correcto!");
     return true;
   }
-}
+};
 
 function mostrarContrasena() {
   let tipo = document.getElementById("password");
@@ -92,21 +92,52 @@ const checkContrasena = () => {
     );
     return false;
   }
-}
+};
 
 const miFormulario = document.getElementById("form-registro");
-
 miFormulario.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
+function agregarRegistro() {
+  if (typeof arreglocompuesto === "undefined") {
+    globalThis.arreglocompuesto = new Array();
+  }
+
+  let arreglo = {
+    nombre: document.getElementById("nombre").value,
+    apellido: document.getElementById("apellido").value,
+    telefono: document.getElementById("telefono").value,
+    correo: document.getElementById("correo").value,
+    password: document.getElementById("password").value,
+  };
+  arreglocompuesto.push(arreglo);
+  console.log(arreglocompuesto);
+  ordenar(arreglocompuesto);
+}
+
+function ordenar(arregloordenado) {
+  arregloordenado.sort(function (a, b) {
+    if (a.apellido > b.apellido) {
+      return 1;
+    }
+    if (a.apellido < b.apellido) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+}
+
 function validate() {
-  console.clear();
-  checkNombre();
-  checkApellido();
-  checkTelefono();
-  checkCorreo();
-  checkContrasena();
+  // console.clear();
+  // checkNombre();
+  // checkApellido();
+  // checkTelefono();
+  // checkCorreo();
+  // checkContrasena();
+  agregarRegistro();
+  // ordenar(arreglocompuesto);
 }
 
 module.exports = {
@@ -115,4 +146,5 @@ module.exports = {
   checkTelefono,
   checkCorreo,
   checkContrasena,
+  agregarRegistro,
 };

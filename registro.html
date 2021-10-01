@@ -21,14 +21,14 @@
 
 
     <div id="container-form">
-      <form id="form-registro" onsubmit=validate()>
+      <form id="form-registro">
         <h1 id="registro">
           Registro
         </h1>
 
         <div class="item nombre">
           <label class="campo">Nombre</label>
-          <input id="nombre" type="text" />
+          <input id="nombre" type="text" name="nombre" />
         </div>
 
         <div class="item apellido">
@@ -48,15 +48,15 @@
         </div>
         <div class="item pass">
           <label class="campo">Contraseña</label>
-          <input type="password" id="password" onblur="checkContrasena(this.value)" />
+          <input type="password" id="password" />
 
-          <button class="btn btn-primary" type="button" onclick="mostrarContrasena()">ver</button>
+          <button class="btn btn-primary" type="button">ver</button>
 
           <div id="seguridad"></div>
 
         </div>
         <div class="item boton">
-          <button type="submit" id="btn-submit-form" value="Registrar">Registrarme</button>
+          <button type="submit" id="btn-submit-form" value="Registrar" onclick="agregarRegistro()">Registrarme</button>
         </div>
       </form>
 
@@ -69,6 +69,7 @@
 
   </footer>
   <script type="text/javascript" src="form.js"></script>
+  <script type="text/javascript" src="registro.js"></script>
 </body>
 
 </html>

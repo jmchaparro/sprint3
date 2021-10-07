@@ -1,0 +1,1 @@
+SELECT nombre,apellido,telefono FROM usuarios ORDER BY telefono DESC

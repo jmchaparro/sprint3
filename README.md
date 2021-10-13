@@ -1,10 +1,9 @@
-# sprint3
+# sprint5
 
-Sprint 3 - UPB
+Sprint 5 - UPB
 
 Grupo #2
 
 - Alvarez Archila, Sofia
 - Chaparro Rueda, Juan Manuel
-- Conde Roa, Wilman Fernando
 - De La Hoz Sierra, Roberto Martin

@@ -51,8 +51,24 @@ function login() {
   console.log("correo vacio o no existe");
   return false;
 } //fin function login()
-
+ 
 const miLogin = document.getElementById("form-login");
 miLogin.addEventListener("submit", (e) => {
   e.preventDefault();
 });
+
+//Funcion captcha
+function validarCAPTCHA(valor) {
+  if(Number(valor) === 1000) {
+      return true;
+  }else {
+      return false;
+  }
+}
+
+
+
+/*module.exports.login = login;
+module.exports.registros = registros;
+module.exports.validarCAPTCHA = validarCAPTCHA;
+module.exports.agregarRegistro = agregarRegistro;*/

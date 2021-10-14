@@ -74,6 +74,23 @@ function validarCAPTCHA(valor) {
   }
 }
 
+//Funcion agregarRegistro
+function agregarRegistro() {
+        if (typeof registros === "undefined") {
+            globalThis.registros = new Array();
+        }
+        var inputs = document.getElementsByTagName("input");
+        let arreglo = {
+            nombre: inputs[0].value,
+            apellido: inputs[1].value,
+            telefono: inputs[2].value,
+            correo: inputs[3].value,
+            password: inputs[4].value,
+        };
+        registros.push(arreglo);
+        console.log(registros);
+    }
+
 /*module.exports.login = login;
 module.exports.registros = registros;
 module.exports.validarCAPTCHA = validarCAPTCHA;

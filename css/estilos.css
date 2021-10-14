@@ -253,14 +253,13 @@ footer {
   }
 }
 
-div#seguridad {
+div#seguridad span {
   font-size: 0.75em;
-  padding: 10px;
-  text-align: justify;
-
-  color: #56c70f;
+  margin: 20px 0 0;
+  text-align: center;
+  /* color: #56c70f; */
 }
 
-div#seguridad .error {
+/* div#seguridad .error {
   color: #f00;
-}
+} */

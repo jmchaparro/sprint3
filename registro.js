@@ -1,9 +1,19 @@
-let registros = [];
-
-// const RegisterForm = document.querySelector("#form-registro");
-// var correos_filtrados = [];
-
-// RegisterForm.addEventListener("submit", agregarRegistro);
+let registros = [
+  {
+    nombre: "juan",
+    apellido: "chaparro",
+    telefono: "5552222",
+    correo: "aaa@gmail.com",
+    contrasena: "123123",
+  },
+  {
+    nombre: "manuel",
+    apellido: "rueda",
+    telefono: "2225555",
+    correo: "bbb@yahoo.com",
+    contrasena: "321321",
+  },
+];
 
 function ordenarArreglo(arreglo) {
   console.log(arreglo);
@@ -20,21 +30,6 @@ function ordenarArreglo(arreglo) {
   console.log(arreglo);
   return arreglo;
 }
-
-//funcion filtrar correo
-// function filtrarCorreo(arreglo) {
-//   arreglo = arreglo[arreglo.length - 1];
-//   let mail = arreglo.correo;
-//   let index = mail.indexOf("gmail.com");
-//   console.log(mail.indexOf("gmail.com"));
-//   if (index < 0) {
-//     index = -1;
-//   } else if (index > -1) {
-//     correos_filtrados.push(arreglo);
-//   }
-//   console.log(correos_filtrados);
-//   return correos_filtrados;
-// }
 
 function filtrarCorreo(arreglo) {
   let regName = /[a-zA-Z0-9_.+-]+@gmail.com/;
@@ -62,7 +57,7 @@ function agregarRegistro() {
     apellido: inputs[1].value,
     telefono: inputs[2].value,
     correo: inputs[3].value,
-    password: inputs[4].value,
+    contrasena: inputs[4].value,
   };
 
   // RegisterForm.reset();
@@ -80,7 +75,7 @@ function agregarRegistro() {
 //   ordenarArreglo,
 // };
 
-module.exports.registros = registros;
-module.exports.filtrarCorreo = filtrarCorreo;
-module.exports.ordenarArreglo = ordenarArreglo;
-module.exports.agregarRegistro = agregarRegistro;
+// module.exports.registros = registros;
+// module.exports.filtrarCorreo = filtrarCorreo;
+// module.exports.ordenarArreglo = ordenarArreglo;
+// module.exports.agregarRegistro = agregarRegistro;

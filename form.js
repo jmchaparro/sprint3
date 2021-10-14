@@ -94,11 +94,6 @@ const checkContrasena = () => {
   }
 };
 
-const miFormulario = document.getElementById("form-registro");
-miFormulario.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-
 function agregarRegistro() {
   if (typeof arreglocompuesto === "undefined") {
     globalThis.arreglocompuesto = new Array();
@@ -109,7 +104,7 @@ function agregarRegistro() {
     apellido: document.getElementById("apellido").value,
     telefono: document.getElementById("telefono").value,
     correo: document.getElementById("correo").value,
-    password: document.getElementById("password").value,
+    password: document.getElementById("contrasena").value,
   };
   arreglocompuesto.push(arreglo);
   console.log(arreglocompuesto);
@@ -128,6 +123,11 @@ function ordenar(arregloordenado) {
     return 0;
   });
 }
+
+const miFormulario = document.getElementById("form-registro");
+miFormulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 
 function validate() {
   // console.clear();

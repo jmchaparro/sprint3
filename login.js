@@ -1,35 +1,27 @@
-let registros = [
-  {
-    nombre: "juan",
-    apellido: "chaparro",
-    telefono: "5552222",
-    correo: "aaa",
-    contrasena: "aaa",
-  },
-  {
-    nombre: "manuel",
-    apellido: "rueda",
-    telefono: "2225555",
-    correo: "bbb",
-    contrasena: "bbb",
-  },
-];
+// let registros = [];
+let registros = [{ correo: "juan@gmail.com", contrasena: "SecurePassword123" }];
 
-var inputs = document.getElementsByTagName("input");
+//Funcion agregarRegistro
+function agregarRegistro() {
+  if (typeof registros === "undefined") {
+    globalThis.registros = new Array();
+  }
 
-var correo = document.getElementById("correo");
-var contrasena = document.getElementById("contrasena");
+  var inputs = document.getElementsByTagName("input");
+
+  let arreglo = {
+    correo: inputs[0].value,
+    contrasena: inputs[1].value,
+  };
+
+  registros.push(arreglo);
+  console.log(registros);
+  return true;
+}
 
 function login() {
-  let arregloLogin = [];
-  let datalogin = {
-    correo: document.getElementById("correo").value,
-    password: document.getElementById("contrasena").value,
-    captcha: document.getElementById("captcha").value,
-  };
-  arregloLogin.push(datalogin);
-
-  console.log(registros);
+  var correo = document.getElementById("correo");
+  var contrasena = document.getElementById("contrasena");
 
   const correoIn = correo.value;
   const contrasenaIn = contrasena.value;
@@ -38,8 +30,10 @@ function login() {
   for (var i = 0; i < registros.length; i++) {
     const correoDb = registros[i].correo;
     const contrasenaDb = registros[i].contrasena;
-
-    if (correoDb.length != 1 || correoDb != "" || correoDb != null) {
+    if (correoIn.length == 0) {
+      console.log("correo vacio o no existe");
+      return false;
+    } else {
       if (correoIn == correoDb) {
         if (contrasenaIn == contrasenaDb) {
           if (validarCAPTCHA(captchaIn) == true) {
@@ -56,14 +50,12 @@ function login() {
       }
     }
   }
-  console.log("correo vacio o no existe");
-  return false;
 } //fin function login()
 
-const miLogin = document.getElementById("form-login");
-miLogin.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
+// const miLogin = document.getElementById("form-login");
+// miLogin.addEventListener("submit", (e) => {
+//   e.preventDefault();
+// });
 
 //Funcion captcha
 function validarCAPTCHA(valor) {
@@ -74,24 +66,7 @@ function validarCAPTCHA(valor) {
   }
 }
 
-//Funcion agregarRegistro
-function agregarRegistro() {
-        if (typeof registros === "undefined") {
-            globalThis.registros = new Array();
-        }
-        var inputs = document.getElementsByTagName("input");
-        let arreglo = {
-            nombre: inputs[0].value,
-            apellido: inputs[1].value,
-            telefono: inputs[2].value,
-            correo: inputs[3].value,
-            password: inputs[4].value,
-        };
-        registros.push(arreglo);
-        console.log(registros);
-    }
-
-/*module.exports.login = login;
 module.exports.registros = registros;
+module.exports.login = login;
 module.exports.validarCAPTCHA = validarCAPTCHA;
-module.exports.agregarRegistro = agregarRegistro;*/
+module.exports.agregarRegistro = agregarRegistro;
